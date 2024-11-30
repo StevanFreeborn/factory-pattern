@@ -1,0 +1,8 @@
+{
+  "editor.formatOnSave": true,
+  "dotnet.defaultSolution": "./src/FactoryPattern.sln",
+  "cSpell.words": [
+    "Ekberg",
+    "Filip"
+  ]
+}
