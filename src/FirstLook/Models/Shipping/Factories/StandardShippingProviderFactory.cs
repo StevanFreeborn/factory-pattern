@@ -1,8 +1,8 @@
-namespace FirstLook.Models.Shipping;
+namespace FirstLook.Models.Shipping.Factories;
 
-class ShippingProviderFactory
+class StandardShippingProviderFactory : ShippingProviderFactory
 {
-  public static ShippingProvider CreateProvider(string country)
+  protected override ShippingProvider CreateProvider(string country)
   {
     ShippingProvider shippingProvider;
 

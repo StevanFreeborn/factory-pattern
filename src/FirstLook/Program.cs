@@ -1,4 +1,5 @@
 ﻿using FirstLook.Models.Commerce;
+using FirstLook.Models.Shipping.Factories;
 
 Console.Write("Recipient Country: ");
 var recipientCountry = Console.ReadLine()?.Trim();
@@ -38,10 +39,10 @@ var order = new Order
   TotalWeight = totalWeight
 };
 
-order.LineItems.Add(new Item("CSHARP_SMORGASBORD", "C# Smorgasbord", 100m), 1);
-order.LineItems.Add(new Item("CONSULTING", "Building a website", 100m), 1);
+order.LineItems.Add(new("CSHARP_SMORGASBORD", "C# Smorgasbord", 100m), 1);
+order.LineItems.Add(new("CONSULTING", "Building a website", 100m), 1);
 
-var cart = new ShoppingCart(order);
+var cart = new ShoppingCart(order, new StandardShippingProviderFactory());
 
 var shippingLabel = cart.Finalize();
 
