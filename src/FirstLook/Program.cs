@@ -1,4 +1,5 @@
-﻿using FirstLook.Models.Commerce;
+﻿using FirstLook.Models;
+using FirstLook.Models.Commerce;
 using FirstLook.Models.Shipping.Factories;
 
 Console.Write("Recipient Country: ");
@@ -42,7 +43,7 @@ var order = new Order
 order.LineItems.Add(new("CSHARP_SMORGASBORD", "C# Smorgasbord", 100m), 1);
 order.LineItems.Add(new("CONSULTING", "Building a website", 100m), 1);
 
-var cart = new ShoppingCart(order, new StandardShippingProviderFactory());
+var cart = new ShoppingCart(order, new SwedenPurchaseProviderFactory());
 
 var shippingLabel = cart.Finalize();
 
